@@ -1,5 +1,7 @@
+/*Save these two lines for future usage*/
 import 'reflect-metadata';
 import 'zone.js/dist/zone';
+
 import { Component, provide } from '@angular/core';
 import { bootstrap } from 'angular2-meteor-auto-bootstrap';
 import { ROUTER_PROVIDERS, ROUTER_DIRECTIVES, RouteConfig } from '@angular/router-deprecated'; 
@@ -10,10 +12,10 @@ import { Grade } from './imports/grade/grade.ts';
 import { Login } from './imports/login/login.ts';
 import { Home } from './imports/home/home.ts';
 import { CoursePage } from './imports/coursepage/coursepage.ts';
-import {MATERIAL_PROVIDERS, MATERIAL_DIRECTIVES} from 'ng2-material';
-import {MD_SIDENAV_DIRECTIVES} from '@angular2-material/sidenav';
-import {MdToolbar} from '@angular2-material/toolbar';
-import {MdIcon} from 'ng2-material';
+import { MATERIAL_PROVIDERS, MATERIAL_DIRECTIVES } from 'ng2-material';
+import { MD_SIDENAV_DIRECTIVES } from '@angular2-material/sidenav';
+import { MdToolbar } from '@angular2-material/toolbar';
+import { MdIcon } from 'ng2-material';
 import '../node_modules/@angular2-material/toolbar/toolbar.css';
 import '../node_modules/@angular2-material/button/button.css';
 import '../public/css/toolbar.css';
@@ -32,6 +34,14 @@ import '../public/css/toolbar.css';
   { path: '/home', component: Home},
   { path: '/coursepage', component: CoursePage}
 ])
-class project {}
+class project {	
+
+  accountUrl: string = '/account';
+	courseUrl: string = '/coursepage';
+	logOutUrl: string = '/login';
+  labUrl: string = '/lab';
+  gradeUrl: string = '/grade';
+ 
+ }
  
 bootstrap(project , [MATERIAL_PROVIDERS, ROUTER_PROVIDERS, provide(APP_BASE_HREF, { useValue: '/' })]);
